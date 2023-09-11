@@ -1,0 +1,26 @@
+{
+  "name": "deuna",
+  "version": "1.0.0",
+  "description": "Ejercicios deUna",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nahutrovato/ejerciciosDeUna.git"
+  },
+  "keywords": [
+    "Test",
+    "Cypress"
+  ],
+  "author": "Nahuel Trovato",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nahutrovato/ejerciciosDeUna/issues"
+  },
+  "homepage": "https://github.com/nahutrovato/ejerciciosDeUna#readme",
+  "devDependencies": {
+    "cypress": "^13.1.0"
+  }
+}
