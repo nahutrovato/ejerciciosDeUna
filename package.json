@@ -1,26 +1,23 @@
 {
-  "name": "deuna",
-  "version": "1.0.0",
-  "description": "Ejercicios deUna",
+  "name": "nahuel-trovato-ejercicios",
+  "version": "2.2.0",
+  "description": "Nahuel Trovato ejercicio vinoteca",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nahutrovato/ejerciciosDeUna.git"
+    "cypress:runner": "cypress open --e2e --browser chrome",
+    "cypress:execution": "cypress run --spec cypress/e2e/features/*",
+    "cypress:execution-tags": "cypress run --env tags=@mobile"
   },
   "keywords": [
-    "Test",
-    "Cypress"
+    "cypress"
   ],
-  "author": "Nahuel Trovato",
+  "author": "cucumber",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/nahutrovato/ejerciciosDeUna/issues"
-  },
-  "homepage": "https://github.com/nahutrovato/ejerciciosDeUna#readme",
   "devDependencies": {
-    "cypress": "^13.1.0"
+    "@badeball/cypress-cucumber-preprocessor": "^15.0.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
+    "cypress": "^12.0.2",
+    "esbuild": "^0.16.4",
+    "multiple-cucumber-html-reporter": "^3.0.1"
   }
 }

@@ -20,6 +20,13 @@
 // -- This is a dual command --
 // Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
 //
-//
+Cypress.Commands.add('obtenerPrecioProducto', (locator) => {
+    let precioProducto = ""
+    cy.get(locator).first().invoke("text").then((text) => {
+            precioProducto = text;
+            return cy.wrap(precioProducto);
+      });
+   
+})
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
