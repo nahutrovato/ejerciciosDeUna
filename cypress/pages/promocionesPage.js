@@ -5,12 +5,12 @@ class Promociones {
         btnAgregarProducto: () =>  cy.get('.vtex-flex-layout-0-x-flexRow--AddToCartButtonContainer'),
         imgProducto: () => cy.get('.vtex-product-summary-2-x-imageNormal'),
         tituloProducto: () => cy.get('.vtex-product-summary-2-x-productBrand'),
-        precioProducto: '.vtex-product-price-1-x-sellingPrice',
         modalItemAgregado: () => cy.get('.flex-ns > .flex > .pr5'),
         btnCarritoCompras: () => cy.get('.pa4 > .vtex-button'),
         btnCloseModalItemAgregado: () => cy.get('.vtex-alert__close-icon')
     }
 
+    precioProducto = '.vtex-product-price-1-x-sellingPrice';
     modalText = "Ítem agregado al carrito";
     
     clickCerrarModalCookies = () => this.elements.modalCookies().click({force:true});
@@ -23,7 +23,7 @@ class Promociones {
 
     clickBtnCarritoCompras = () => this.elements.btnCarritoCompras().click();
 
-    obtenerPrecioProducto = () => cy.obtenerPrecioProducto(this.elements.precioProducto).then(value => {return value});
+    obtenerPrecioProducto = () => cy.obtenerPrecioProducto(this.precioProducto).then(value => {return value});
 
     clickCloseModalItemAgregado = () => this.elements.btnCloseModalItemAgregado().click();
 
