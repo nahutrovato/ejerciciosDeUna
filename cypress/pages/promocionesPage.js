@@ -27,14 +27,6 @@ class Promociones {
 
     clickCloseModalItemAgregado = () => this.elements.btnCloseModalItemAgregado().click();
 
-    agregarProducto = () => {
-        this.clickCerrarModalCookies();
-        this.agregarPrimerProducto();
-        this.beVisibleImagenProducto();
-        this.beVisibleModalItemAgregado();
-        this.clickBtnCarritoCompras();
-    };
-
 }
 
 module.exports = new Promociones()

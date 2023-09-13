@@ -1,9 +1,7 @@
-import CarritoPage from "@pages/carritoPage";
-
 class Checkout {
 
     elements = {
-        titleCheckOut: () => cy.title().should('eq','Vinoteca - Finalizar la compra'),
+        titleCheckOut: () => cy.title(),
         btnProcederAlPago: () => cy.get('#cart-to-orderform'),
         inputEmail: () => cy.get('#client-email'),
         inputFirstName: () => cy.get('#client-first-name'),
@@ -37,17 +35,9 @@ class Checkout {
 
     clickBtnContinuar = () => this.elements.btnContinuar().click();
 
-    flujoPago = () => {
-        CarritoPage.clickBtnCheckOut();
-        this.elements.titleCheckOut();
-        this.elements.urlCheckOut('cart');
-        this.clickBtnProcederAlPago();
-        cy.scrollTo(0,600);
-        this.completarInformacionUsuario("seccionSuperior");
-        this.aceptarTerminosCondiciones();
-        this.clickBtnContinuar();
-        this.completarInformacionUsuario();
-    };
+    titleCheckOut = () => this.elements.titleCheckOut().should('eq','Vinoteca - Finalizar la compra');
+
+    urlCheckOut = () => this.elements.urlCheckOut('cart');
 }
 
 module.exports = new Checkout()
