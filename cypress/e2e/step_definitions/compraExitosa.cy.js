@@ -18,8 +18,8 @@ When('seleccione los productos preferidos de la seccion "Promociones"', () => {
 
 Then('podra realizar el pago de manera exitosa', () => {
   CarritoPage.clickBtnCheckOut();
-  CheckoutPage.titleCheckOut();
-  CheckoutPage.urlCheckOut();
+  CheckoutPage.titleCheckOut('Vinoteca - Finalizar la compra');
+  CheckoutPage.urlCheckOut('cart');
   CheckoutPage.clickBtnProcederAlPago();
   cy.scrollTo(0,600);
   CheckoutPage.completarInformacionUsuario("seccionSuperior");

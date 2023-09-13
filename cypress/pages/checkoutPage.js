@@ -35,9 +35,9 @@ class Checkout {
 
     clickBtnContinuar = () => this.elements.btnContinuar().click();
 
-    titleCheckOut = () => this.elements.titleCheckOut().should('eq','Vinoteca - Finalizar la compra');
+    titleCheckOut = (text) => this.elements.titleCheckOut().should('eq',text);
 
-    urlCheckOut = () => this.elements.urlCheckOut('cart');
+    urlCheckOut = (text) => this.elements.urlCheckOut(text);
 }
 
 module.exports = new Checkout()
