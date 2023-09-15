@@ -1,3 +1,6 @@
+import PromocionesPage  from "@pages/promocionesPage";
+import CarritoPage from "@pages/carritoPage";
+import CheckoutPage from "@pages/checkoutPage";
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -27,6 +30,26 @@ Cypress.Commands.add('obtenerPrecioProducto', (locator) => {
             return cy.wrap(precioProducto);
       });
    
+});
+
+Cypress.Commands.add('seleccionarProducto', () => {
+      PromocionesPage.clickCerrarModalCookies();
+      PromocionesPage.agregarPrimerProducto();
+      PromocionesPage.beVisibleImagenProducto();
+      PromocionesPage.beVisibleModalItemAgregado();
+      PromocionesPage.clickBtnCarritoCompras();
+});
+
+Cypress.Commands.add('finalizarCompra', () => {
+      CarritoPage.clickBtnCheckOut();
+      CheckoutPage.titleCheckOut('Vinoteca - Finalizar la compra');
+      CheckoutPage.urlCheckOut('cart');
+      CheckoutPage.clickBtnProcederAlPago();
+      cy.scrollTo(0,600);
+      CheckoutPage.completarInformacionUsuario("seccionSuperior");
+      CheckoutPage.aceptarTerminosCondiciones();
+      CheckoutPage.clickBtnContinuar();
+      CheckoutPage.completarInformacionUsuario();
 })
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
